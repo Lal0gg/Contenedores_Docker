@@ -1,0 +1,13 @@
+#Primera Etapa
+FROM node:16.14.0-alpine as build-step
+WORKDIR /app
+COPY package.json ./
+COPY . ./
+
+RUN npm install
+RUN npm run build --prod
+
+#Segunda Etapa
+FROM nginx:1.20.2-alpine as prod-stage
+	#Si estas utilizando otra aplicacion cambia PokeApp por el nombre de tu app
+COPY --from=build-step /app/dist/dockerdemo /usr/share/nginx/html

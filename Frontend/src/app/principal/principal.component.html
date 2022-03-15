@@ -1,0 +1,98 @@
+<div class="container">
+    <div  class="stater-template">
+        <h1>CRUD Usuarios</h1>
+    </div>
+    <div>
+        <label>Selecciona el id del usuario: </label>
+        <mat-form-field appearance="fill">
+            <select matNativeControl [(ngModel)]="SelectUser" class="form-select" (ngModelChange)="onChange($event)">
+                <option selected>Seleccionar ID</option>
+                <option *ngFor="let u of arreglo" [value]="u.id">
+                    {{u.id}}
+                </option>
+            </select>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" [(ngModel)]="Nombretxt"/>
+                </div>
+                <div class="form-group">
+                    <label>Edad</label>
+                    <input type="text" class="form-control" [(ngModel)]="Edadtxt"/>
+                </div>
+                <div class="form-group">
+                    <label>Genero</label>
+                    <input type="text" class="form-control" [(ngModel)]="Generotxt"/>
+                </div>
+                <div class="form-group">
+                    <label>Correo</label>
+                    <input type="text" class="form-control" required [(ngModel)]="Correotxt"/>
+                </div>
+                <div class="form-group">
+                    <label>Informacion Adicional</label>
+                    <input type="text" class="form-control" [(ngModel)]="Adicionaltxt"/>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <button class="form-control" type="button" (click)="agregar()">Agregar</button>
+                </div>
+                <div class="form-group">
+                    <button class="form-control" type="button" (click)="modificar()">Modificar</button>
+                </div>
+                <div class="form-group">
+                    <button class="form-control" type="button" (click)="eliminar()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <h2>Tabla de Usuarios</h2>
+        
+        <button class="form-control" type="button" (click)="mostrar_tabla()">Actualizar</button>
+    </div>    
+      
+    <div class="form-group">
+        <table mat-table [dataSource]="datos" class="mat-elevation-z8 tabla-diseno">
+            <ng-container matColumnDef="ID">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Nombre">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td mat-cell *matCellDef="let element">{{element.nombre}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Genero">
+                <th mat-header-cell *matHeaderCellDef>Genero</th>
+                <td mat-cell *matCellDef="let element">{{element.genero}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Edad">
+                <th mat-header-cell *matHeaderCellDef>Edad</th>
+                <td mat-cell *matCellDef="let element">{{element.edad}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Correo">
+                <th mat-header-cell *matHeaderCellDef>Correo</th>
+                <td mat-cell *matCellDef="let element">{{element.correo}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Info Adicional">
+                <th mat-header-cell *matHeaderCellDef>Info Adicional</th>
+                <td mat-cell *matCellDef="let element">{{element.adicional}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+       
+    </div>
+    <br>
+</div>

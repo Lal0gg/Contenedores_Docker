@@ -1,0 +1,60 @@
+.stater-template{
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.tabla-diseno{
+    width: 100%;
+}
+
+.mat-row .mat-cell{
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.mat-row:hover .mat-cell{
+    border-color: currentColor;
+}
+
+.demo-sow-is-clicked{
+    font-weight: bold;
+}
+
+div{
+    margin-top: 0px; margin-bottom: 8px; 
+   
+}
+
+button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 9px 21px;
+    border: 1px solid #258f81;
+    border-radius: 32px;
+    background: #3ce9d1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3ce9d1), to(#258f81));
+    background: -moz-linear-gradient(top, #3ce9d1, #258f81);
+    background: linear-gradient(to bottom, #3ce9d1, #258f81);
+    text-shadow: #175a51 1px 1px 1px;
+    font: italic normal bold 17px comic sans ms;
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:hover,
+.button:focus {
+    border: 1px solid #2eb3a1;
+    background: #48fffb;
+    background: -webkit-gradient(linear, left top, left bottom, from(#48fffb), to(#2cac9b));
+    background: -moz-linear-gradient(top, #48fffb, #2cac9b);
+    background: linear-gradient(to bottom, #48fffb, #2cac9b);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #258f81;
+    background: -webkit-gradient(linear, left top, left bottom, from(#258f81), to(#258f81));
+    background: -moz-linear-gradient(top, #258f81, #258f81);
+    background: linear-gradient(to bottom, #258f81, #258f81);
+}

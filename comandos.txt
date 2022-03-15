@@ -1,0 +1,10 @@
+//Para crear contenedor de base de datos
+docker run -p 3306:3306 --name nodejs-mysql -e MYSQL_ROOT_PASSWORD=pass -e MYSQL_DATABASE=emails_db -d mysql:5.7
+
+//Para crear imagen del server
+docker build -t server .
+
+//Para crear contenedor de imagen del server
+docker run -p 3000:3000 --name node server
+
+con esto ya jala en Windows :D

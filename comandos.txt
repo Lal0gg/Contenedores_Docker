@@ -7,4 +7,6 @@ docker build -t server .
 //Para crear contenedor de imagen del server
 docker run -p 3000:3000 --name node server
 
+//usar el endpoint (get)/hola para crear la tabla de usuarios
+
 con esto ya jala en Windows :D
